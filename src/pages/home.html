@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% from "partials/macros.html" import pair, cta, ribbon with context %}
+{% block title %}{{ site.name }} ({{ site.short }}) | {{ L('Connecting Agricultural Resources with Business Opportunities', 'Menghubungkan Sumber Daya Pertanian dengan Peluang Bisnis') }}{% endblock %}
+{% block desc %}{{ L('Jakarta-based Indonesian trading company connecting resources, suppliers, processors and buyers. Starting with corn cobs, agricultural commodities and bio-based materials.', 'Perusahaan perdagangan Indonesia berbasis Jakarta yang menghubungkan sumber daya, pemasok, pengolah, dan pembeli. Dimulai dari tongkol jagung, komoditas pertanian, dan bahan berbasis hayati.') }}{% endblock %}
+{% block head %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"{{ site.name }}","alternateName":"{{ site.short }}","foundingDate":"2025","address":{"@type":"PostalAddress","addressLocality":"Jakarta","addressCountry":"ID"},"identifier":"NIB {{ site.nib }}"}</script>
+{% endblock %}
+{% block main %}
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">{{ site.name }} &middot; Jakarta, Indonesia</p>
+      <h1 id="h1">{{ L('Connecting Agricultural Resources with Business Opportunities', 'Menghubungkan Sumber Daya Pertanian dengan Peluang Bisnis') }}</h1>
+      <p class="lead">{{ L('BMS connects resources, suppliers, processors and buyers across Indonesia. Starting with corn cobs, agricultural commodities and bio-based materials.', 'BMS menghubungkan sumber daya, pemasok, pengolah, dan pembeli di seluruh Indonesia. Dimulai dari tongkol jagung, komoditas pertanian, dan bahan berbasis hayati.') }}</p>
+      <div class="actions">
+        <a class="btn btn-forest" href="{{ url('contact') }}?intent=need">{{ L('I need this', 'Saya butuh ini') }}</a>
+        <a class="btn btn-gold" href="{{ url('contact') }}?intent=have">{{ L('I have this', 'Saya punya ini') }}</a>
+      </div>
+      <p class="hint">{{ L('Buyer or seller? Tell us in one short form.', 'Pembeli atau penjual? Beri tahu kami lewat satu formulir singkat.') }}</p>
+    </div>
+    <svg class="net" viewBox="0 0 440 330" aria-hidden="true" focusable="false">
+      <g class="ln-g">
+        <path class="ln" d="M59 60 C140 60 140 165 182 165"/><path class="ln" d="M59 130 C140 130 140 165 182 165"/>
+        <path class="ln" d="M59 200 C140 200 140 165 182 165"/><path class="ln" d="M59 270 C140 270 140 165 182 165"/>
+        <path class="ln" d="M258 165 C300 165 300 60 381 60"/><path class="ln" d="M258 165 C300 165 300 130 381 130"/>
+        <path class="ln" d="M258 165 C300 165 300 200 381 200"/><path class="ln" d="M258 165 C300 165 300 270 381 270"/>
+      </g>
+      <circle class="src" cx="50" cy="60" r="9"/><circle class="src" cx="50" cy="130" r="9"/><circle class="src" cx="50" cy="200" r="9"/><circle class="src" cx="50" cy="270" r="9"/>
+      <circle class="dst" cx="390" cy="60" r="9"/><circle class="dst" cx="390" cy="130" r="9"/><circle class="dst" cx="390" cy="200" r="9"/><circle class="dst" cx="390" cy="270" r="9"/>
+      <circle class="core" cx="220" cy="165" r="40"/>
+      <text class="core-t" x="220" y="171" text-anchor="middle">BMS</text>
+      <text x="50" y="315" text-anchor="middle">{{ L('Sources', 'Sumber') }}</text>
+      <text x="390" y="315" text-anchor="middle">{{ L('Buyers', 'Pembeli') }}</text>
+    </svg>
+  </div>
+</section>
+
+<div class="ribbons">
+  {{ ribbon('maize', 'corn-cobs.html', L('Current focus', 'Fokus saat ini'), L('Corn Cobs', 'Tongkol Jagung'), L('Collected, milled and sieved into granules and powder, per buyer requirement.', 'Dikumpulkan, digiling, dan diayak menjadi granula dan bubuk sesuai kebutuhan pembeli.')) }}
+  {{ ribbon('gold', url('catalogue'), L('Catalogue', 'Katalog'), L('%d materials, one network' % materials|length, '%d material, satu jaringan' % materials|length), L('Agricultural commodities, bio-based materials and industrial resources.', 'Komoditas pertanian, bahan berbasis hayati, dan sumber daya industri.')) }}
+  {{ ribbon('moss', url('products'), L('Processed Products', 'Produk Olahan'), L('Where processed corn cobs fit', 'Ke mana tongkol jagung olahan dipakai'), L('Cosmetic and personal care, and industrial uses.', 'Penggunaan kosmetik dan perawatan diri, serta industri.')) }}
+  {{ ribbon('noir', url('process'), L('How We Work', 'Cara Kerja'), L('One network, four steps', 'Satu jaringan, empat langkah'), L('From your requirement to a coordinated supply.', 'Dari kebutuhan Anda hingga pasokan yang terkoordinasi.')) }}
+</div>
+
+{{ cta(L("What's moving through your network?", 'Apa yang bergerak di jaringan Anda?'), L('Whether you have resources to offer or a material requirement to fulfil, BMS can help explore the connection.', 'Baik Anda memiliki sumber daya untuk ditawarkan maupun kebutuhan material yang harus dipenuhi, BMS dapat membantu menjajaki koneksinya.')) }}
+{% endblock %}
