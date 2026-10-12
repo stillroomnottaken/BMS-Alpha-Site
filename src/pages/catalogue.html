@@ -1,18 +1,14 @@
 {% extends "base.html" %}
 {% from "partials/macros.html" import pair, cta with context %}
-{% set cats = {'focus': L('Current focus', 'Fokus saat ini'), 'agri': L('Agricultural commodities', 'Komoditas pertanian'), 'bio': L('Bio-based materials', 'Bahan berbasis hayati'), 'industrial': L('Industrial', 'Industri')} %}
+{% set cats = {'agri': L('Agricultural commodities', 'Komoditas pertanian'), 'bio': L('Bio-based materials', 'Bahan berbasis hayati'), 'industrial': L('Industrial', 'Industri')} %}
 {% block title %}{{ L('Materials Catalogue', 'Katalog Material') }}{% endblock %}
-{% block desc %}{{ L('Corn cobs, agricultural commodities, bio-based and industrial materials. Tell BMS what you need or what you have.', 'Tongkol jagung, komoditas pertanian, bahan berbasis hayati, dan material industri. Beri tahu BMS apa yang Anda butuhkan atau miliki.') }}{% endblock %}
+{% block desc %}{{ L('Agricultural commodities, bio-based and industrial materials. Contact BMS to buy or sell.', 'Komoditas pertanian, bahan berbasis hayati, dan material industri. Hubungi BMS untuk membeli atau menjual.') }}{% endblock %}
 {% block main %}
 <section class="head head-gold">
   <div class="wrap">
     <p class="eyebrow">{{ L('Catalogue', 'Katalog') }}</p>
     <h1>{{ L('Materials Catalogue', 'Katalog Material') }}</h1>
-    <p class="lead">{{ L('Corn cobs lead our current work, alongside a wider network of materials.', 'Tongkol jagung memimpin pekerjaan kami saat ini, bersama jaringan material yang lebih luas.') }}</p>
-    <p class="legend">
-      <span><b>{{ L('Buyer?', 'Pembeli?') }}</b> {{ L('Tap', 'Pilih') }} &ldquo;{{ L('I need this', 'Saya butuh ini') }}&rdquo;</span>
-      <span><b>{{ L('Seller?', 'Penjual?') }}</b> {{ L('Tap', 'Pilih') }} &ldquo;{{ L('I have this', 'Saya punya ini') }}&rdquo;</span>
-    </p>
+    <p class="lead">{{ L('Agricultural commodities and materials we trade. Buying or selling, start here.', 'Komoditas dan material pertanian yang kami perdagangkan. Mau membeli atau menjual, mulai dari sini.') }}</p>
   </div>
 </section>
 
@@ -28,13 +24,11 @@
       {% for m in materials %}
       {% set name = m.name[lang] %}
       <article class="mat" data-cat="{{ m.cat }}">
-        <div class="mat-tag t-{{ m.cat }}">{{ cats[m.cat] }}</div>
-        {% if m.get('image') %}<img class="mat-img" src="{{ asset('img/' ~ m.image) }}" alt="{{ name }}" width="640" height="360" loading="lazy" decoding="async">{% endif %}
+        <div class="mat-body mat-head"><h3>{% if m.get('detail') %}<a href="{{ m.slug }}.html">{{ name }}</a>{% else %}{{ name }}{% endif %}</h3></div>
+        {% if m.get('image') %}<img class="mat-img" src="{{ asset('img/' ~ m.image) }}" alt="{{ name }}" width="640" height="360" loading="lazy" decoding="async">{% else %}<div class="mat-img mat-ph" role="img" aria-label="{{ name }}"></div>{% endif %}
         <div class="mat-body">
-          <h3>{% if m.get('detail') %}<a href="{{ m.slug }}.html">{{ name }}</a>{% else %}{{ name }}{% endif %}</h3>
-          {% if m.get('blurb') %}<p>{{ m.blurb[lang] }}</p>{% endif %}
           <div class="mat-cta">
-            <small>{{ L('Contact us about this!', 'Hubungi kami tentang ini!') }}</small>
+            <small>{{ L('Contact us about this', 'Hubungi kami tentang ini') }}</small>
             {{ pair(m.slug) }}
           </div>
         </div>
@@ -45,7 +39,7 @@
           <h3>{{ L('Not listed?', 'Tidak ada di daftar?') }}</h3>
           <p>{{ L('Other relevant industrial materials are welcome. Tell us what you need or have.', 'Material industri lain yang relevan juga kami terima. Beri tahu kami apa yang Anda butuhkan atau miliki.') }}</p>
           <div class="mat-cta">
-            <small>{{ L('Contact us about this!', 'Hubungi kami tentang ini!') }}</small>
+            <small>{{ L('Contact us about this', 'Hubungi kami tentang ini') }}</small>
             {{ pair('other') }}
           </div>
         </div>

@@ -1,44 +1,30 @@
 {% extends "base.html" %}
-{% from "partials/macros.html" import pair, cta with context %}
+{% from "partials/macros.html" import cta with context %}
 {% block title %}{{ L('Processed Products', 'Produk Olahan') }}{% endblock %}
-{% block desc %}{{ L('What corn cobs become once milled and sieved into granules and powder, and where they may be used.', 'Wujud tongkol jagung setelah digiling dan diayak menjadi granula dan bubuk, serta ke mana material itu dapat digunakan.') }}{% endblock %}
+{% block desc %}{{ L('Industries that may use the agricultural and bio-based materials BMS trades.', 'Industri yang dapat menggunakan material pertanian dan berbasis hayati yang diperdagangkan BMS.') }}{% endblock %}
 {% block main %}
 <section class="head head-moss">
   <div class="wrap">
     <p class="eyebrow">{{ L('Processed Products', 'Produk Olahan') }}</p>
     <h1>{{ L('Processed Products', 'Produk Olahan') }}</h1>
-    <p class="lead">{{ L('What our current focus material becomes once it is processed, and where it may be used.', 'Wujud material fokus kami setelah diolah, dan ke mana material itu dapat digunakan.') }}</p>
+    <p class="lead">{{ L('Industries that may use the materials we trade.', 'Industri yang dapat menggunakan material yang kami perdagangkan.') }}</p>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap">
-    <h2>{{ L('From cob to product', 'Dari tongkol menjadi produk') }}</h2>
-    <ol class="steps" style="--n:3">
-      <li><b>{{ L('Collect', 'Kumpulkan') }}</b><span>{{ L('Collectors, plantations and logistics partners', 'Pengepul, perkebunan, dan mitra logistik') }}</span></li>
-      <li><b>{{ L('Mill & sieve', 'Giling & ayak') }}</b><span>{{ L('Via processing partners', 'Melalui mitra pengolahan') }}</span></li>
-      <li><b>{{ L('Granules & powder', 'Granula & bubuk') }}</b><span>{{ L('Formats and sizes per buyer requirement', 'Format dan ukuran sesuai kebutuhan pembeli') }}</span></li>
-    </ol>
-  </div>
-</section>
-
-<section class="sec sec-alt">
-  <div class="wrap">
-    <h2>{{ L('Where processed corn cobs may fit', 'Ke mana tongkol jagung olahan dapat dipakai') }}</h2>
+    <h2>{{ L('Industries', 'Industri') }}</h2>
     <div class="cols-2">
-      <article class="card">
-        <h3>{{ L('Cosmetic & personal care', 'Kosmetik & perawatan diri') }}</h3>
-        <p>{{ L('Appropriately processed corn cob powder can serve as a physical exfoliating material in selected formulations.', 'Bubuk tongkol jagung yang diolah dengan tepat dapat menjadi bahan eksfoliasi fisik pada formulasi tertentu.') }}</p>
-      </article>
-      <article class="card">
-        <h3>{{ L('Industrial', 'Industri') }}</h3>
-        <p>{{ L('Corn cob granules and powder can be used as absorbent or polishing media.', 'Granula dan bubuk tongkol jagung dapat digunakan sebagai media penyerap atau pemoles.') }}</p>
-      </article>
+      <article class="card"><h3>{{ L('Food & beverage', 'Makanan & minuman') }}</h3></article>
+      <article class="card"><h3>{{ L('Cosmetic & personal care', 'Kosmetik & perawatan diri') }}</h3></article>
+      <article class="card"><h3>{{ L('Energy & biofuel', 'Energi & biofuel') }}</h3></article>
+      <article class="card"><h3>{{ L('Chemicals & coatings', 'Kimia & pelapis') }}</h3></article>
+      <article class="card"><h3>{{ L('Industrial', 'Industri') }}</h3></article>
     </div>
-    <p class="note">{{ L("Specifications, particle sizes and suitability for a given use are discussed per buyer requirement and confirmed through the buyer's own testing.", 'Spesifikasi, ukuran partikel, dan kesesuaian untuk penggunaan tertentu dibahas sesuai kebutuhan pembeli dan dikonfirmasi melalui pengujian pembeli sendiri.') }}</p>
-    <p><a class="btn btn-line btn-sm" href="corn-cobs.html">{{ L('About corn cobs', 'Tentang tongkol jagung') }} &rarr;</a></p>
+    <p class="note">{{ L('Specifications are discussed per buyer requirement.', 'Spesifikasi dibahas sesuai kebutuhan pembeli.') }}</p>
+    <p><a class="btn btn-line btn-sm" href="{{ url('catalogue') }}">{{ L('See the catalogue', 'Lihat katalog') }} &rarr;</a></p>
   </div>
 </section>
 
-{{ cta(L('Looking for processed corn cobs?', 'Mencari tongkol jagung olahan?'), L('Tell us the format and particle size you need, or what you can supply.', 'Beri tahu format dan ukuran partikel yang Anda butuhkan, atau apa yang dapat Anda pasok.'), 'corn-cobs') }}
+{{ cta(L('Looking for a material?', 'Mencari material?'), L('Tell us what you need, or what you can supply.', 'Beri tahu kami apa yang Anda butuhkan, atau apa yang dapat Anda pasok.')) }}
 {% endblock %}

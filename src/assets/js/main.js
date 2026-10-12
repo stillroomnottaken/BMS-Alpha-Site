@@ -44,9 +44,9 @@
   if (!form) { return; }
 
   var TXT = {
-    en: { head: 'New enquiry', need: 'BUYER (I need this)', have: 'SELLER (I have this)', material: 'Material', qty: 'Quantity',
+    en: { head: 'New enquiry', need: 'BUYER', have: 'SELLER', material: 'Material', qty: 'Quantity',
           loc: 'Location', notes: 'Notes', name: 'Name', company: 'Company', phone: 'WhatsApp', foot: 'Sent from the BMS website', tbd: 'unit to be discussed' },
-    id: { head: 'Permintaan baru', need: 'PEMBELI (Saya butuh ini)', have: 'PENJUAL (Saya punya ini)', material: 'Material', qty: 'Jumlah',
+    id: { head: 'Permintaan baru', need: 'PEMBELI', have: 'PENJUAL', material: 'Material', qty: 'Jumlah',
           loc: 'Lokasi', notes: 'Catatan', name: 'Nama', company: 'Perusahaan', phone: 'WhatsApp', foot: 'Dikirim dari situs BMS', tbd: 'satuan dibahas nanti' }
   };
   var T = TXT[form.getAttribute('data-lang')] || TXT.en;

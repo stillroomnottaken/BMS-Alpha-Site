@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "partials/macros.html" import pair, cta with context %}
+{% from "partials/macros.html" import contact_btn with context %}
 {% block title %}{{ L('How We Work', 'Cara Kerja') }}{% endblock %}
 {% block desc %}{{ L('BMS sits between those who hold resources and those who need them, coordinating sourcing, processing and logistics.', 'BMS berada di antara pihak yang memiliki sumber daya dan pihak yang membutuhkannya, mengoordinasikan pengadaan, pengolahan, dan logistik.') }}{% endblock %}
 {% block main %}
@@ -18,13 +18,12 @@
       <ul>
         <li>{{ L('Farms', 'Lahan pertanian') }}</li><li>{{ L('Collectors', 'Pengepul') }}</li><li>{{ L('Plantations', 'Perkebunan') }}</li><li>{{ L('Suppliers', 'Pemasok') }}</li><li>{{ L('Agricultural businesses', 'Usaha pertanian') }}</li>
       </ul>
-      <a class="btn btn-gold" href="{{ url('contact') }}?intent=have">{{ L('I have this', 'Saya punya ini') }}</a>
     </div>
     <div class="flow-arrow" aria-hidden="true">&rarr;</div>
     <div class="flow-col flow-core">
       <h3>BMS</h3>
       <ul>
-        <li>{{ L('Sourcing', 'Pengadaan') }}</li><li>{{ L('Aggregation', 'Agregasi') }}</li><li>{{ L('Coordination', 'Koordinasi') }}</li><li>{{ L('Processing partnerships', 'Kemitraan pengolahan') }}</li><li>{{ L('Logistics coordination', 'Koordinasi logistik') }}</li>
+        <li>{{ L('Sourcing', 'Pengadaan') }}</li><li>{{ L('Aggregation', 'Agregasi') }}</li><li>{{ L('Coordination', 'Koordinasi') }}</li><li>{{ L('Processing to needs', 'Pengolahan sesuai kebutuhan') }}</li><li>{{ L('Logistics coordination', 'Koordinasi logistik') }}</li>
       </ul>
     </div>
     <div class="flow-arrow" aria-hidden="true">&rarr;</div>
@@ -33,22 +32,11 @@
       <ul>
         <li>{{ L('Manufacturers', 'Produsen') }}</li><li>{{ L('Processors', 'Pengolah') }}</li><li>{{ L('Distributors', 'Distributor') }}</li><li>{{ L('Industrial buyers', 'Pembeli industri') }}</li><li>{{ L('Cosmetic & personal care companies', 'Perusahaan kosmetik & perawatan diri') }}</li>
       </ul>
-      <a class="btn btn-forest" href="{{ url('contact') }}?intent=need">{{ L('I need this', 'Saya butuh ini') }}</a>
     </div>
   </div>
 </section>
 
-<section class="sec sec-alt">
-  <div class="wrap">
-    <h2>{{ L('A practical process', 'Proses yang praktis') }}</h2>
-    <ol class="steps" style="--n:4">
-      <li><b>{{ L('Understand requirements', 'Memahami kebutuhan') }}</b></li>
-      <li><b>{{ L('Explore sourcing options', 'Menjajaki opsi pengadaan') }}</b></li>
-      <li><b>{{ L('Coordinate suppliers & processors', 'Mengoordinasikan pemasok & pengolah') }}</b></li>
-      <li><b>{{ L('Discuss commercial arrangements', 'Membahas kesepakatan komersial') }}</b></li>
-    </ol>
-    <p class="eyebrow" style="margin-top:20px">{{ L('Every enquiry considers', 'Setiap permintaan mempertimbangkan') }}</p>
-    <ul class="chips"><li>{{ L('Material', 'Material') }}</li><li>{{ L('Processing', 'Pengolahan') }}</li><li>{{ L('Packing', 'Pengemasan') }}</li><li>{{ L('Shipping', 'Pengiriman') }}</li></ul>
-  </div>
+<section class="sec" style="padding-top:0">
+  <div class="wrap" style="text-align:center">{{ contact_btn('', 'btn-forest btn-lg') }}</div>
 </section>
 {% endblock %}

@@ -2,14 +2,14 @@
 {% from "partials/macros.html" import pair, cta with context %}
 {% set name = m.name[lang] %}
 {% block title %}{{ name }}{% endblock %}
-{% block desc %}{% if m.slug == 'corn-cobs' %}{{ L('Corn cobs are the BMS current focus: collected through collectors, plantations and logistics partners, then milled and sieved into granules and powder.', 'Tongkol jagung adalah fokus BMS saat ini: dikumpulkan melalui pengepul, perkebunan, dan mitra logistik, lalu digiling dan diayak menjadi granula dan bubuk.') }}{% else %}{{ name }}{% endif %}{% endblock %}
+{% block desc %}{% if m.slug == 'corn-cobs' %}{{ L('Corn cobs are one of the agricultural materials BMS trades, processed to your needs.', 'Tongkol jagung adalah salah satu material pertanian yang diperdagangkan BMS, diolah sesuai kebutuhan Anda.') }}{% else %}{{ name }}{% endif %}{% endblock %}
 {% block main %}
 <section class="head head-maize">
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ url('home') }}">{{ L('Home', 'Beranda') }}</a> / <a href="{{ url('catalogue') }}">{{ L('Catalogue', 'Katalog') }}</a> / {{ name }}</nav>
-    <p class="eyebrow">{{ L('Current focus', 'Fokus saat ini') }}</p>
+    <p class="eyebrow">{{ L('Agricultural commodities', 'Komoditas pertanian') }}</p>
     <h1>{{ name }}</h1>
-    <p class="lead">{{ L('Collected through collectors, plantations and logistics partners, then milled and sieved into granules and powder through processing partners.', 'Dikumpulkan melalui pengepul, perkebunan, dan mitra logistik, lalu digiling dan diayak menjadi granula dan bubuk melalui mitra pengolahan.') }}</p>
+    <p class="lead">{{ L('An agricultural material BMS can source and supply, processed to your needs.', 'Material pertanian yang dapat BMS carikan dan pasok, diolah sesuai kebutuhan Anda.') }}</p>
     <div style="margin-top:20px;max-width:360px">{{ pair(m.slug) }}</div>
   </div>
 </section>
@@ -17,17 +17,15 @@
 <section class="sec">
   <div class="wrap about-grid">
     <div>
-      <h2>{{ L('What are corn cobs here?', 'Apa itu tongkol jagung di sini?') }}</h2>
-      <p>{{ L("Corn cobs are BMS's current focus material. Formats and particle sizes are discussed according to each buyer's requirements.", 'Tongkol jagung adalah material fokus BMS saat ini. Format dan ukuran partikel dibahas sesuai kebutuhan masing-masing pembeli.') }}</p>
+      <h2>{{ L('About corn cobs', 'Tentang tongkol jagung') }}</h2>
+      <p>{{ L("Corn cobs are one of the materials BMS trades. Specifications are discussed according to each buyer's requirements.", 'Tongkol jagung adalah salah satu material yang diperdagangkan BMS. Spesifikasi dibahas sesuai kebutuhan masing-masing pembeli.') }}</p>
       <p class="eyebrow" style="margin-top:24px">{{ L('Potential uses', 'Potensi penggunaan') }}</p>
       <ul class="chips"><li>{{ L('Cosmetics / personal care', 'Kosmetik / perawatan diri') }}</li><li>{{ L('Industrial applications', 'Aplikasi industri') }}</li></ul>
-      <p class="note">{{ L("Suitability depends on processing, specification and the buyer's own testing.", 'Kesesuaian bergantung pada pengolahan, spesifikasi, dan pengujian pembeli sendiri.') }} <a href="{{ url('products') }}">{{ L('See processed products', 'Lihat produk olahan') }} &rarr;</a></p>
+      <p class="note">{{ L("Suitability is confirmed through the buyer's own testing.", 'Kesesuaian dikonfirmasi melalui pengujian pembeli sendiri.') }} <a href="{{ url('products') }}">{{ L('See processed products', 'Lihat produk olahan') }} &rarr;</a></p>
     </div>
     <dl class="facts">
-      <div><dt>{{ L('Form', 'Bentuk') }}</dt><dd>{{ L('Granules and powder', 'Granula dan bubuk') }}</dd></div>
       <div><dt>{{ L('Sourcing', 'Pengadaan') }}</dt><dd>{{ L('Collectors, plantations and logistics partners', 'Pengepul, perkebunan, dan mitra logistik') }}</dd></div>
-      <div><dt>{{ L('Processing', 'Pengolahan') }}</dt><dd>{{ L('Milled and sieved via processing partners', 'Digiling dan diayak melalui mitra pengolahan') }}</dd></div>
-      <div><dt>{{ L('Particle sizes', 'Ukuran partikel') }}</dt><dd>{{ L('Discussed per buyer requirement', 'Dibahas sesuai kebutuhan pembeli') }}</dd></div>
+      <div><dt>{{ L('Processing', 'Pengolahan') }}</dt><dd>{{ L('Processed to needs', 'Diolah sesuai kebutuhan') }}</dd></div>
       <div><dt>{{ L('Packing & shipping', 'Kemasan & pengiriman') }}</dt><dd>{{ L('Considered as part of each enquiry', 'Dipertimbangkan dalam setiap permintaan') }}</dd></div>
       <div><dt>{{ L('Volumes', 'Volume') }}</dt><dd class="soon">{{ L('Information coming soon', 'Informasi segera hadir') }}</dd></div>
     </dl>
